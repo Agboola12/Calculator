@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MULTIPLICATION TABLE</title>
+	<script>
+			function generate() 
+			{
+				 var result;
+				var aa= (a.value);
+				var bb= (b.value);
+				document.write("<table border=2><tr>")
+				  for ( x=1; x<=aa ; x++){
+				  	document.write("<td>")
+				  	document.write("<table>")
+					document.write("<tr><th>"+x+"Times </th><tr>")
+					for(i=1;i<bb;i++) 
+					{  
+						result=x*i;
+						document.write("<tr><td>"+x+"x"+i+"="+result+"</td></tr>");			
+				  }
+				  document.write("</table></td>");
+			    }
+			    document.write("</tr></table>");
+			}
+			
+			
+		
+	</script>
+</head>
+<body>
+	Blocks<input type="text" id="a" value=""></br>
+	Lines<input type="text" id="b" value=""></br>
+	Start<input type="text" id="c" value=""></br>
+<button  onclick="generate()">Generate</button>
+</body>
+</html>
