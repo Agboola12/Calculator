@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+<style type="text/css">
+	<meta charset</utf-8>
+	<style>
+		th {text-align: right;}
+		button{width: 100%;height: 50px }
+		 button:hover {background: white}
+
+	</style>
+	<script type="text/javascript">
+		var fvalue= "";
+		var svalue="";
+		var symbol="";
+		
+		
+		function ONOFF(){
+			if (ans.value = "") {
+				power.innerHTML = "ON";
+
+			}
+			else {
+				power.innerHTML = "OFF";
+				ans.value= 0;
+			}
+		}
+		function clearscreen(){
+			ans.value = 0;
+		}
+
+
+		
+		function button(u){
+			ans.value+=u;
+}
+	
+		 function operators(w){
+		 	fvalue=parseFloat(ans.value)
+		 	ans.value+=w;
+		 	ans.value="";
+		 	symbol=w;
+
+
+		 }
+		function equals()
+		{
+			svalue = parseFloat(ans.value);
+
+			if (symbol == "/"){
+			    ans.value = parseFloat(fvalue) / parseFloat(svalue);
+			}
+			else if (symbol == "-"){
+				ans.value = parseFloat(fvalue) - parseFloat(svalue);
+			}
+			else if (symbol == "+") {
+				ans.value = parseFloat(fvalue) + parseFloat(svalue);
+			}
+			else if (symbol == "*"){
+				ans.value = parseFloat(fvalue) * parseFloat(svalue);
+			}	
+			// else if (symbol == "Sin"){
+			// 	ans.value = Math.sin(ans.value)
+			// }
+			else if (equals=="=") {
+				ans.value = fvalue = svalue;
+			}	
+			else {
+				ans.value = "";
+			}
+		}
+
+		function reduce(){
+			ans.value  -- ;
+		}
+		function Cos(){
+			ans.value = Math.cos(ans.value)
+		}
+        function Sin(){
+        	ans.value = Math.sin(ans.value)
+        }
+        function Tan(){
+        	ans.value = Math.tan(ans.value)
+        }
+	</script>
+</head>
+<body>
+<table border="none" width="20%" bgcolor="lightgrey" align="center">
+<tr>
+	<td style="width:150px;" colspan="4" align="center"><input disabled="disabled" type="text" name="" id="ans" style="width:300px;height: 30px"></td>
+</tr>
+<tr>
+        <td colspan=""><button onclick="clearscreen()">CE</button></td>
+        <td colspan=""><button onclick="ONOFF()" id="power" >ON</button> </td>
+        <td colspan="2"><button onclick="reduce()">DELETE</button></td>
+      </tr>
+			
+		
+
+		
+			<tr>
+				<td><button onclick="button('Log')">Log</button></td>
+				<td><button onclick="Sin('Sin')">Sin</button></td>
+				<td> <button onclick="Cos()"  >Cos</button></td>
+				<td> <button onclick="Tan('Tan')">Tan</button></td>
+			</tr>
+<!-- </table> -->
+<!-- <table border="none" width="23%" align="center" bgcolor="lightgrey"> -->
+
+<tr>
+			
+			<td ><button  onclick="button('1')">1</button></td>
+			<td ><button  onclick="button('2')">2</button></td>
+			<td ><button  onclick="button('3')">3</button></td>
+			<td ><button  onclick="operators('+')" id="add" >+</button></td>
+		
+		</tr>
+
+		<tr>
+			
+			<td ><button  onclick="button('4')">4</button></td>
+			<td ><button  onclick="button('5')">5</button></td>
+			<td ><button  onclick="button('6')">6</button></td>
+			<td ><button  onclick="operators('-')" id="minus" >-</button></<td>
+			</td>
+		</tr>
+
+		<tr>
+			
+			<td ><button  onclick="button('7')">7</button></td>
+			<td ><button  onclick="button('8')">8</button></td>
+			<td ><button  onclick="button('9')">9</button></td>
+			<td ><button  onclick="operators('/')" id="divide" >/</button></td>
+			
+		</tr>
+
+		<tr>
+			
+			<td ><button  onclick="button('.')">.</button></td>
+			<td ><button  onclick="button('0')">0</button></td>
+			<td ><button  onclick="equals('=')">=</button></td>
+			<td ><button  onclick="operators('*')" id="multiply" >*</button></td>
+			
+		</tr>
+
+</body>
+</html>
